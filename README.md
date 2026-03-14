@@ -1,10 +1,53 @@
-## This is the most basic kind of regression model I made .
+# Simple Linear Regression
 
-# What steps I followed :
-- I first used matplotlib to scatter the dataset to see , If it is linear or polynomial.
-- I realized it was linear so I used linear regressor .
-- I plotted the graphs to compare results.
+Predict employee salary from years of experience using ordinary least squares linear regression.
 
+## Overview
 
-Mathematical Model :
-<b> y = b0 + b1x <b>
+Fits the classic model **y = b₀ + b₁x** where *x* is years of experience and *y* is salary. The dataset is split 2:1 into training and test sets, a `LinearRegression` model is trained, and results are visualised for both splits.
+
+Implementations are provided in both Python and R.
+
+## Dataset
+
+`Salary_Data.csv` — 30 observations with two columns:
+
+| Column | Description |
+|---|---|
+| `YearsExperience` | Years of professional experience |
+| `Salary` | Annual salary (USD) |
+
+## 🛠 Tech Stack
+
+| | Tool | Purpose |
+|---|---|---|
+| 🐍 | Python 3 | Primary implementation |
+| 📊 | scikit-learn | `LinearRegression`, `train_test_split` |
+| 🔢 | NumPy / pandas | Data handling |
+| 📈 | Matplotlib | Visualisation |
+| 📉 | R | Alternative implementation |
+| 🎨 | ggplot2 | R visualisation |
+
+## Getting Started
+
+### Python
+
+```bash
+pip install -r requirements.txt
+python simple_linear_regression.py
+```
+
+### R
+
+```r
+# Install dependencies (first time only)
+install.packages(c("caTools", "ggplot2"))
+
+# Run
+source("simple_linear_regression.R")
+```
+
+## ⚠️ Known Issues
+
+- The dataset is small (30 rows), so model generalisation is limited.
+- Plots use `plt.show()` which requires a display; run headless with `matplotlib.use("Agg")` if needed.
